@@ -4,17 +4,25 @@ import Quote from './Quote'
 import GenerateButton from './GenerateButton'
 import TwitterButton from './TwitterButton'
 
-const styles = {
+const boxStyles = {
     width: 500,
-    borderColor: "black",
-    borderStyle: "solid",
-    borderRadius: 10
+    margin: "auto",
+    borderRadius: 8,
+    marginTop: 100,
+    padding: 20,
+    backgroundColor: "#fff"
+}
+
+const quoteContainerStyles = {
+    padding: 10,
+    width: 500,
+    margin: "auto",
 }
 
 class QuoteBox extends Component {
     state = {
         quotes: [
-            { author: 'Charlie Chaplin', quote: 'You have to believe in yourself, that\'s the secret.Even when I was in the orphanage, when I was roaming the street trying to find enough to eat, even then I thought of myself as the greatest actor in the world.' },
+            { author: 'Charlie Chaplin', quote: 'You have to believe in yourself, that\'s the secret. Even when I was in the orphanage, when I was roaming the street trying to find enough to eat, even then I thought of myself as the greatest actor in the world.' },
             { author: 'Henry Ward Beecher', quote: 'It gives one a sudden start in going down a barren, stoney street, to see upon a narrow strip of grass, just within the iron fence, the radiant dandelion, shining in the grass, like a spark dropped from the sun.' },
             { author: 'Francis Scott Key Fitzgerald', quote: 'The hangover became a part of the day as well allowed-for as the Spanish siesta.' },
             { author: 'Charles Kingsley', quote: 'All that we need to make us really happy is something to be enthusiastic about.' },
@@ -47,14 +55,14 @@ class QuoteBox extends Component {
         })
     }
 
-
     render() {
         return (
-            <div id="quote-box" style={styles}>
-                <h1>This is the quote container</h1>
+            <div id="quote-box" style={boxStyles}>
                 <Quote quote={this.state.currQuote} author={this.state.currAuthor} />
-                <GenerateButton click={this.generateNewQuote} />
-                <TwitterButton />
+                <div className="row" style={quoteContainerStyles}>
+                    <GenerateButton click={this.generateNewQuote} />
+                    <TwitterButton />
+                </div>
             </div>
         );
     }
