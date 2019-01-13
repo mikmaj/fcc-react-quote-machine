@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Quote extends Component {
-    render() {
-        return (
-            <div>
-                <blockquote id="text">This is a quote</blockquote>
-                <p id="author">This is the author</p>
-            </div>
-        );
-    }
-}
+const Quote = (props) => {
+    return (
+        <div>
+            <blockquote id="text">{props.quote}</blockquote>
+            <p id="author">{props.author}</p>
+        </div>
+    );
+};
 
 export default Quote;
