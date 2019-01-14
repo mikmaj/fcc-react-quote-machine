@@ -162,7 +162,7 @@ class QuoteBox extends Component {
                     </div>
                 </div>
                 <footer>
-                    created by <a href="https://github.com/mikmaj" target="_blank"> mikmaj </a>
+                    created by <a href="https://github.com/mikmaj" target="_blank" rel="noopener noreferrer"> mikmaj </a>
                 </footer>
             </div>
         );
