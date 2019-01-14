@@ -8,52 +8,162 @@ import './QuoteBox.css'
 class QuoteBox extends Component {
     state = {
         quotes: [
-            { author: 'Charlie Chaplin', quote: 'You have to believe in yourself, that\'s the secret. Even when I was in the orphanage, when I was roaming the street trying to find enough to eat, even then I thought of myself as the greatest actor in the world.' },
-            { author: 'Henry Ward Beecher', quote: 'It gives one a sudden start in going down a barren, stoney street, to see upon a narrow strip of grass, just within the iron fence, the radiant dandelion, shining in the grass, like a spark dropped from the sun.' },
-            { author: 'Francis Scott Key Fitzgerald', quote: 'The hangover became a part of the day as well allowed-for as the Spanish siesta.' },
-            { author: 'Charles Kingsley', quote: 'All that we need to make us really happy is something to be enthusiastic about.' },
-            { author: 'George Bernard Shaw', quote: 'The more things a man is ashamed of, the more respectable he is.' },
-            { author: 'Richard Lee Rhodes', quote: 'The physicist Leo Szilard once announced to his friend Hans Bethe that he was thinking of keeping a diary: \'I don\'t intend to publish it: I\'m merely going to record the facts for the information of God\' \'Don\'t you think God knows the facts?\' Bethe asked. \'Yes,\' said Szilard, \'He knows the facts, but He does not know THIS VERSION OF THE FACTS.\'' },
-            { author: 'J. E. Littlewood', quote: 'I recall once saying that when I had given the same lecture several times I couldn\'t help feeling that they really ought to know it by now.' },
-            { author: 'Steven Wright', quote: 'I told her I knew when I was going to die because my birth certificate had an expiration date on it.' },
-            { author: 'James R. Newman', quote: 'The most painful thing about mathematics is how far away you are from being able to use it after you have learned it.' },
-            { author: 'Adlai Ewing Stevenson', quote: 'I have been told that one of the reasons the astronomers of the world cooperate is the fact that there is no one nation from which the entire sphere of the sky can be seen. Perhaps there is in that fact a parable for national statesmen, whose political horizons are all too often limited by national horizons.' },
-            { author: 'Henry David Thoreau', quote: 'For every thousand hacking at the leaves of evil, there is one striking at the root.' },
-            { author: 'Theodore Parker', quote: 'Truth never yet fell dead in the streets; it has such affinity with the soul of man, the seed however broadcast will catch somewhere and produce its hundredfold.' },
-            { author: 'Charles Dickens', quote: 'No one is useless in this world who lightens the burden of it to anyone else.' },
-            { author: 'John Locke', quote: 'That which is static and repetitive is boring. That which is dynamic and random is confusing. In between lies art.' },
-            { author: 'Ambrose Gwinett Bierce', quote: 'MAD, adj. Affected with a high degree of intellectual independence; at odds with the majority; in short, unusual. It is noteworthy that persons are pronounced mad by officials destitute of evidence that themselves are sane.' },
-            { author: 'Lemuel K. Washburn', quote: 'We cannot go ahead without leaving something behind' },
-            { author: 'Phillips Brooks', quote: 'We are haunted by an ideal life, and it is because we have within us the beginning and the possibility of it.' },
-            { author: 'Ralph Waldo Emerson', quote: 'Striving is perhaps the one and only true elixir, for while we converse with what is above us, we do not grow old, but grow young.' },
-            { author: 'Elliot Easton', quote: 'I think one thing we went through was common to a lot of people: You work your whole life to achieve something, then you achieve it and find out that you still have good days and bad days. So you start thinking, \'Is that all there is?\' After a while you calm down and get back to work.' },
-            { author: 'William Butler Yeats', quote: 'Grant me an old man\'s frenzy, Myself must I remake Till I am Timon and Lear Or that William Blake Who beat upon the wall Till Truth obeyed his call.' }
+            { 
+                author: 'Rikako Oryo', 
+                quote: 'This epidemic leads innocent people to their deaths, and yet it\'s pathogen will never be eradicated. This is a disease called serenity, a form of death that people have wished for',
+                show: 'Psycho-Pass',
+                show_url: 'https://myanimelist.net/anime/13601/Psycho-Pass'
+            },
+            { 
+                author: 'Eren Kruger', 
+                quote: 'There is no such thing as truth in this world. That is our reality. Anyone can become a God or a Devil. All it takes is for someone to claim that to be the truth.',
+                show: 'Attack on Titan',
+                show_url: 'https://myanimelist.net/anime/16498/Shingeki_no_Kyojin'
+            },
+            { 
+                author: 'Hachiman Hikigaya', 
+                quote: 'Well it\'s not like the world is full of sunshine and daisies. If society was only shaped by the view that one must be happy-go-lucky all the time, Hollywood wouldn\'t make tear-jerking movies, would they?',
+                show: 'My Teen Romantic Comedy SNAFU',
+                show_url: 'https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru'
+            },
+            { 
+                author: 'Rouka Numachi', 
+                quote: 'There isn\'t anything that\'s evil to everyone. Even the worst evil saves something. On the other hand, even the greatest good hurts someone. The phrase "There are no absolutes in this world" means there isn\'t any absolute good or absolute evil.',
+                show: 'Hanamonogatari',
+                show_url: 'https://myanimelist.net/anime/21855/Hanamonogatari'
+            },
+            { 
+                author: 'Gintoki Sakata', 
+                quote: 'For a pregnant woman to give birth, she\'s gotta feel the pain of pulling a watermelon out of her nostril. For an Artist to create a masterpiece, he\'s gotta feel the pain of pulling entire galaxies out of his ass.',
+                show: 'Gintama',
+                show_url: 'https://myanimelist.net/anime/918/Gintama' 
+            },
+            { 
+                author: 'Osamu Dazai', 
+                quote: 'Anything I would never want to lose is always lost. It is a given that everything that is worth wanting will be lost the moment I obtain it. There\'s nothing worth pursuing at the cost of prolonging a life of suffering.',
+                show: 'Bungou Stray Dogs',
+                show_url: 'https://myanimelist.net/anime/31478/Bungou_Stray_Dogs' 
+            },
+            { 
+                author: 'Satsuki Kiryuuin', 
+                quote: 'A castle that vanishes at the first gust of wind is worthless. A skyscraper within your mind will never fall down.', 
+                show: 'KILL la KILL', 
+                show_url: 'https://myanimelist.net/anime/18679/Kill_la_Kill'
+            },
+            { 
+                author: 'Aizen Sousuke', 
+                quote: 'You are fighting out of obligation, not out of hatred. You will never reach me like that. Battle without hatred is like a bird without wings. You’ll never defeat anyone like that. You powerless friends are just weights that will break your legs.',
+                show: 'Bleach',
+                show_url: 'https://myanimelist.net/anime/269/Bleach'
+            },
+            { 
+                author: 'Yato', 
+                quote: 'Life and death are like light and shadow. They\'re both always there.But people don\'t like thinking about death, so subconsciously, they always look away from it.',
+                show: 'Noragami',
+                show_url: 'https://myanimelist.net/anime/20507/Noragami'
+            },
+            { 
+                author: 'Kikyo', 
+                quote: 'Once the thread of fate is tangled, it cannot be undone.',
+                show: 'InuYasha',
+                show_url: 'https://myanimelist.net/anime/249/InuYasha'
+            },
+            { 
+                author: 'Kenshiro', 
+                quote: 'The pain on these wounds will last only a second. The pain of your death would last a lifetime.',
+                show: 'Fist of the North Star',
+                show_url: 'https://myanimelist.net/anime/967/Hokuto_no_Ken'
+            },
+            { 
+                author: 'Sweet Mask', 
+                quote: 'A hero must be tough, strong and beautiful... As well as able to promptly and splendidly eradicate evil.',
+                show: 'One Punch Man',
+                show_url: 'https://myanimelist.net/anime/30276/One_Punch_Man'
+            },
+            { 
+                author: 'Kyoko Mogami', 
+                quote: 'No matter the reason, I don\'t think anyone who loses consciousness in the battlefield has any right to survive!',
+                show: 'Skip Beat!',
+                show_url: 'https://myanimelist.net/anime/4722/Skip_Beat'
+            },
+            { 
+                author: 'Koyomi Araragi', 
+                quote: 'The impostor is an impostor because it can\'t be distinguished from the real thing.The proof of its falsity is in its resemblance to the real thing.',
+                show: 'Nisemonogatari',
+                show_url: 'https://myanimelist.net/anime/11597/Nisemonogatari'
+            },
+            { 
+                author: 'Millions Knives', 
+                quote: 'If you keep saving butterflies, spiders will starve to death! But wanting to save them both is a contradiction. What would you rather do? Keep deliberating? The butterfly will be eaten in the meantime.',
+                show: 'Trigun',
+                show_url: 'https://myanimelist.net/anime/6/Trigun'
+            },
+            { 
+                author: 'Licht Jekylland Todoroki', 
+                quote: 'It\'s not about wanting to do something that you can do, it\'s about what you do. It\'s not about wanting to become someone, it\'s about who you want to become.',
+                show: 'SERVAMP',
+                show_url: 'https://myanimelist.net/anime/31229/Servamp'
+            },
+            { 
+                author: 'Kurosu Etsurou', 
+                quote: 'There would be no happier death than being killed by the woman I love.',
+                show: 'Ana Satsujin',
+                show_url: 'https://myanimelist.net/manga/63849/Ana_Satsujin'
+            },
+            { 
+                author: 'Alois Trancy', 
+                quote: 'I have a dream at last. The butterfly trapped in spiderweb has no wings. That butterfly is... me.',
+                show: 'Kuroshitsuji',
+                show_url: 'https://myanimelist.net/anime/4898/Kuroshitsuji'
+            },
+            { 
+                author: 'Gilgamesh', 
+                quote: 'There are two kinds of arrogance. One where you are unequal to the task and one where your dreams are too big. The former is commonplace stupidity... but the latter is a rare species that is difficult to find.',
+                show: 'Fate/Zero',
+                show_url: 'https://myanimelist.net/anime/10087/Fate_Zero'
+            },
+            {
+                author: 'Kazkis Hauer', 
+                quote: 'All those who wander in the darkness seek the light, but when they reach the light, they turn away their eyes from the blinding glare.',
+                show: 'Ergo Proxy',
+                show_url: 'https://myanimelist.net/anime/790/Ergo_Proxy'
+            }
         ],
         currQuote: '',
-        currAuthor: ''
+        currAuthor: '',
+        currShow: '',
+        currShowUrl: ''
     }
 
     generateNewQuote = () => {
         let num = Math.floor(Math.random() * 20)
         this.setState({
             currAuthor: this.state.quotes[num].author,
-            currQuote: this.state.quotes[num].quote
+            currQuote: this.state.quotes[num].quote,
+            currShow: this.state.quotes[num].show,
+            currShowUrl: this.state.quotes[num].show_url
         })
     }
 
     render() {
         // Generate a random quote on page load
-        if(this.state.currQuote === '') {
+        if (this.state.currQuote === '') {
             this.generateNewQuote()
         }
-        
+
         return (
-            <div id="quote-box" className="quote-box">
-                <Quote quote={this.state.currQuote} author={this.state.currAuthor} />
-                <div className="row quote-container">
-                    <GenerateButton click={this.generateNewQuote} />
-                    <TwitterButton quote={this.state.currQuote} author={this.state.currAuthor}/>
+            <div>
+                <h4 className="title">anime nonsense quote generator</h4>
+                <div id="quote-box" className="quote-box">
+                    <Quote quote={this.state.currQuote} author={this.state.currAuthor} show={this.state.currShow} show_url={this.state.currShowUrl}/>
+                    <div className="row btn-container">
+                        <TwitterButton quote={this.state.currQuote} author={this.state.currAuthor} />
+                        <GenerateButton click={this.generateNewQuote} />
+                    </div>
                 </div>
+                <footer>
+                    created by <a href="https://github.com/mikmaj" target="_blank"> mikmaj </a>
+                </footer>
             </div>
         );
     }

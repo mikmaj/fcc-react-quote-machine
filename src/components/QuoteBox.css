@@ -2,13 +2,34 @@
     width: 500px;
     margin: auto;
     border-radius: 8;
-    margin-top: 100px;
+    margin-top: 10px;
     padding: 20px;
     background-color: #fff;
 }
 
-.quote-container {
-    padding: 10px;
+.btn-container {
+    width: 100%
+}
+
+.btn-container > div {
+    display: inline-block;
+    margin:auto;
+}
+
+.title {
     width: 500px;
     margin: auto;
+    text-align: center;
+    margin-top: 90px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace
+}
+
+footer {
+    width: 500px;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
 }
