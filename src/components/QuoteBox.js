@@ -29,8 +29,8 @@ class QuoteBox extends Component {
             { author: 'Elliot Easton', quote: 'I think one thing we went through was common to a lot of people: You work your whole life to achieve something, then you achieve it and find out that you still have good days and bad days. So you start thinking, \'Is that all there is?\' After a while you calm down and get back to work.' },
             { author: 'William Butler Yeats', quote: 'Grant me an old man\'s frenzy, Myself must I remake Till I am Timon and Lear Or that William Blake Who beat upon the wall Till Truth obeyed his call.' }
         ],
-        currQuote: 'We cannot go ahead without leaving something behind',
-        currAuthor: 'Lemuel K. Washburn'
+        currQuote: '',
+        currAuthor: ''
     }
 
     generateNewQuote = () => {
@@ -42,12 +42,17 @@ class QuoteBox extends Component {
     }
 
     render() {
+        // Generate a random quote on page load
+        if(this.state.currQuote === '') {
+            this.generateNewQuote()
+        }
+        
         return (
             <div id="quote-box" className="quote-box">
                 <Quote quote={this.state.currQuote} author={this.state.currAuthor} />
                 <div className="row quote-container">
                     <GenerateButton click={this.generateNewQuote} />
-                    <TwitterButton />
+                    <TwitterButton quote={this.state.currQuote} author={this.state.currAuthor}/>
                 </div>
             </div>
         );
