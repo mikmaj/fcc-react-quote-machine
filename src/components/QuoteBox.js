@@ -3,21 +3,7 @@ import React, { Component } from 'react';
 import Quote from './Quote'
 import GenerateButton from './GenerateButton'
 import TwitterButton from './TwitterButton'
-
-const boxStyles = {
-    width: 500,
-    margin: "auto",
-    borderRadius: 8,
-    marginTop: 100,
-    padding: 20,
-    backgroundColor: "#fff"
-}
-
-const quoteContainerStyles = {
-    padding: 10,
-    width: 500,
-    margin: "auto",
-}
+import './QuoteBox.css'
 
 class QuoteBox extends Component {
     state = {
@@ -57,9 +43,9 @@ class QuoteBox extends Component {
 
     render() {
         return (
-            <div id="quote-box" style={boxStyles}>
+            <div id="quote-box" className="quote-box">
                 <Quote quote={this.state.currQuote} author={this.state.currAuthor} />
-                <div className="row" style={quoteContainerStyles}>
+                <div className="row quote-container">
                     <GenerateButton click={this.generateNewQuote} />
                     <TwitterButton />
                 </div>
